@@ -1,0 +1,44 @@
+<view class="list_item">
+	<image class="order_img" src="{{src}}" mode="scaleToFill"></image>
+	<view class="title">{{title}}</view>
+	<view class="prics_and_num">
+		<view class="price">￥{{price}}</view>
+		<view class="num">x{{num}}</view>
+	</view>
+	<view class="creat_time">{{creatTime}}</view>
+</view>
+<form class="askrefund_list" bindsubmit="askrefundSubmit">
+	<view class="input_box">
+		<label>申请服务：</label>
+		<view class="input_area">
+			<picker bindchange="refundMethodPicker" value="{{methodIndex}}" range="{{refundMethod}}" mode="selector" name="refundMethod">
+				<view class="picker">{{refundMethod[methodIndex]}}</view>
+			</picker>
+			<view class="arr_down"></view>
+		</view>
+	</view>
+	<view class="input_box">
+		<label>退款原因：</label>
+		<view class="input_area">
+			<picker bindchange="refundReasonPicker" value="{{reasonIndex}}" range="{{refundReason}}" mode="selector" name="refundReason">
+				<view class="picker">{{refundReason[reasonIndex]}}</view>
+			</picker>
+			<view class="arr_down"></view>
+		</view>
+	</view>
+	<view class="input_box">
+		<label>退款金额：</label>
+		<view class="input_area">
+			<view class="i_price">￥</view>
+			<input value="{{price}}" maxlength="4" name="refundPrice"></input>
+			<view class="tips">(最多2500元)</view>
+		</view>
+	</view>
+	<view class="input_box2">
+		<label>退款说明</label>
+		<view class="input_area2">
+			<textarea name="refundDetail"></textarea>
+		</view>
+	</view>
+	<button formType="submit" class="submit_btn" id="{{id}}">提交</button>
+</form>

@@ -1,0 +1,191 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="top_box">
+	<swiper autoplay="true" circular="true">
+		<block wx:for="{{src}}">
+			<swiper-item>
+				<image class="detail_img" src="{{item.image}}" mode="scaleToFill"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="count_down">
+		距结束：
+		<text>{{countDownDay}}</text>天
+		<text>{{countDownHour}}</text>时
+		<text>{{countDownMinute}}</text>分
+		<text>{{countDownSecond}}</text>秒
+	</view>
+</view>
+
+
+<view class="card info">
+	<view class="title">{{title}}</view>
+	<view class="company">处置单位：{{company}}</view>
+	<view class="price_box">
+		当前价：
+		<text class="price">{{price}}</text>
+		<text class="yuan">元</text>
+		<view class="who_box">出价人：<text class="who">{{who}}</text></view>
+	</view>
+	<view class="info_list">起拍价：￥{{startPrice}}</view>
+	<view class="info_list">加价幅度：￥{{addStep}}</view>
+	<view class="info_list">类型：{{type}}</view>
+	<view class="info_list">保证金：￥{{deposit}}</view>
+	<view class="info_list">竞价周期：{{duringTime}}</view>
+	<view class="info_list">延时周期：{{delayTime}}</view>
+	<view class="info_list" style="width: 100%">竞价规则：至少一人报名且出价不低于起拍价，方可成交</view>
+</view>
+
+
+<view class="card read">
+	<view class="stitle">竞拍前必读</view>
+	<view class="flow_step" style="margin-top: 32rpx;">
+		<view class="number">1</view>
+		<view class="step_title">拍卖准备</view>
+		<view class="step_detail">阅读竞买公告，实地看样；确保有淘宝账号及实名认证完成的支付宝账号，企业账号注册流程，个人账号注册流程；拍卖过程中淘宝平台不收取任何费用</view>
+	</view>
+	<view class="flow_step">
+		<view class="number">2</view>
+		<view class="step_title">报名交保证金</view>
+		<view class="step_detail">拍卖结束前都可以交保证金，建议提前1-2天交，以免遇到问题错过拍卖；可以委托他人拍卖，查看委托流程该标的物需缴纳保证金1,000元，建议您使用银行卡快捷支付、网银、支付宝余额、余额宝，确保账户有足够的钱款哦 查看各银行支付限额及视频教程</view>
+	</view>
+	<view class="flow_step">
+		<view class="number">3</view>
+		<view class="step_title">参与竞拍</view>
+		<view class="step_detail">手机电脑均可出价，出价次数无限制（可以不出价）查看出价、成交等规则</view>
+	</view>
+	<view class="flow_step">
+		<view class="number">4</view>
+		<view class="step_title">竞拍结束</view>
+		<view class="step_detail">竞拍失败：保证金会自动全额退回给竞买人。查看保证金退回方式竞拍成功：按照法院在竞买公告中的说明支付尾款，尾款支付后请联系法院签署《拍卖成交确认书》，办理交割。</view>
+	</view>
+</view>
+
+
+<view class="card">
+	<view class="stitle">
+		竞买公告
+		<navigator id="{{id}}" class="stitle_link" url="" open-type="navigate" hover-class="none" catchtap="toAffiche">显示全部<text decode="true">&gt;&gt;</text></navigator>
+	</view>
+	<!-- <view class="notice">{{affiche}}</view> -->
+	<view class="notice">
+		<template is="wxParse" data="{{wxParseData:affiche.nodes}}"/>
+	</view>
+</view>
+
+
+<view class="card">
+	<view class="stitle">
+		竞买须知
+		<navigator id="{{id}}" class="stitle_link" url="" open-type="navigate" hover-class="none" catchtap="toNotice">显示全部<text decode="true">&gt;&gt;</text></navigator>
+	</view>
+	<!-- <view class="needknow">{{notice}}</view> -->
+	<view class="needknow">
+		<template is="wxParse" data="{{wxParseData:notice.nodes}}"/>
+	</view>
+</view>
+
+
+
+<view class="card">
+	<view class="stitle">
+		大家都在问
+		<navigator id="{{id}}" class="stitle_link" url="/pages/qanda/qanda" open-type="navigate" hover-class="none">显示全部<text decode="true">&gt;&gt;</text></navigator>
+	</view>
+	<view class="top_qa">
+		<view class="item_q">{{topQ}}</view>
+		<view class="item_a">{{topA}}</view>
+	</view>
+</view>
+
+
+
+
+<view class="card">
+	<view class="stitle">
+		标的物介绍
+	</view>
+	<view class="content">
+		<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+	</view>
+</view>
+
+
+
+
+
+<view class="card record_box">
+	<view class="stitle">
+		竞买记录（<text>{{paycount}}</text>）
+		<navigator id="{{id}}" class="stitle_link" url="" open-type="navigate" hover-class="none" catchtap="toRecord">显示全部<text decode="true">&gt;&gt;</text></navigator>
+	</view>
+	<view class="record">
+		<view class="reone ret" style="border-left: 1rpx solid #dcdcdc;">状态</view>
+		<view class="retwo ret">竞买号</view>
+		<view class="reone2 ret">价格</view>
+		<view class="rethree ret" style="border-right: 1rpx solid #dcdcdc;">时间</view>
+		<block wx:for="{{pay}}">
+			<view class="reone" style="border-left: 1rpx solid #dcdcdc;">
+				<view class="state_btn state0" wx:if="{{item.state == 1}}">领先</view>
+				<view class="state_btn state1" wx:if="{{item.state == 0}}">出局</view>
+			</view>
+			<view class="retwo">{{item.number}}</view>
+			<view class="reone2">{{item.price}}</view>
+			<view class="rethree" style="border-right: 1rpx solid #dcdcdc;">{{item.create_time}}</view>
+		</block>
+	</view>
+</view>
+
+
+<view class="card" style="border-bottom: 0;">
+	<view class="stitle">
+		律师尽调
+		<navigator class="stitle_link" url="/pages/service/service" open-type="navigate" hover-class="none">显示全部<text decode="true">&gt;&gt;</text></navigator>
+	</view>
+	<view class="twice_lawyer">
+		<block wx:for="{{twiceLawyer}}">
+			<view class="tl_item" id="{{item.id}}" catchtap="toFwdetail">
+				<image class="tl_img" src="{{item.src}}" mode="scaleToFill"></image>
+				<view class="tl_title">{{item.title}}</view>
+				<view class="tl_li">
+					<view class="tl_tt">地区</view>
+					<view class="tl_co">{{item.location}}</view>
+				</view>
+				<view class="tl_li">
+					<view class="tl_tt">当前价</view>
+					<view class="tl_co">
+						<view class="tl_yuan">￥</view>
+						<view class="tl_pp">{{item.price}}</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>
+
+
+
+<view class="submit_btn btnstate0" wx:if="{{thisState !== '2'}}" bindtap="toPaydeposit" id="{{id}}">
+	<text>报名交保证金</text>
+</view>
+<!-- <view class="submit_btn btnstate1" wx:if="{{thisState == '1'}}">
+	<text>本场拍卖未开始！</text>
+</view> -->
+<view class="submit_btn btnstate2" wx:if="{{thisState == '2'}}">
+	<text>本场拍卖已结束！</text>
+</view>
+<view class="submit_btn btnstate3" wx:if="{{userState == '0'}}" bindtap="showCover">
+	<text>开始出价</text>
+</view>
+<view class="cover_bg" style="display: {{coverBgDisplay}};">
+	<view class="close_area" catchtap="hideCover"></view>
+	<view class="cont" catchtap="">
+		<view class="con_title">出价：</view>
+		<view class="subtract" catchtap="subtract"></view>
+		<input class="con_price" value="{{conPrice}}" bindinput="changeConPrice" type="number"></input>
+		<view class="add" catchtap="add"></view>
+		<view class="con_yuan">元</view>
+	</view>
+	<view class="submit_btn btnstate3 chuajia" catchtap="outPriceFinish" id="{{id}}">
+		<text>开始出价</text>
+	</view>
+</view>

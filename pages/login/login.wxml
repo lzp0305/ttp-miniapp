@@ -1,0 +1,17 @@
+<view class="cover">
+	<form bindsubmit="userdataSubmit">
+		<view class="center_box">
+			<view class="list_item" style="margin-top: 50rpx;">
+				<label for="phone">手机号:</label>
+				<input id="phone" value="{{phone}}" type="number" name="phone" style="width: 214rpx; margin-right: 200rpx;" bindinput="inputPhoneNum" maxlength="11"></input>
+				<button class="get_security {{phoneNumOk?'can_click':'dont_click'}}" disabled="{{disabled}}" bindtap="getSecurity">{{text}}</button>
+			</view>
+			<view class="list_item">
+				<label for="security">验证码:</label>
+				<input id="security" value="" type="number" name="security"></input>
+			</view>
+			<view class="notice" style="margin-top: 30rpx;">如果您之前未注册过天平拍，我们将用手机号为您创建一个新的账户，以后您可以通过手机号直接登录天平拍</view>
+			<button form-type="submit" class="submit_btn">登录</button>
+		</view>
+	</form>
+</view>

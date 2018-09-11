@@ -1,0 +1,169 @@
+.list_item {
+	width: 100%;
+	height: 223rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border-bottom: 1rpx solid #dcdcdc;
+	padding: 40rpx 30rpx 0;
+	background-color: #fafafa;
+	position: relative;
+}
+.list_item_link {
+	overflow: hidden;
+}
+.order_img {
+	display: block;
+	width: 180rpx;
+	height: 126rpx;
+	float: left;
+}
+.title {
+	width: 490rpx;
+	font-size: 30rpx;
+	line-height: 34rpx;
+	height: 34rpx;
+	color: #323232;
+	text-align: left;
+	float: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.prics_and_num {
+	width: 490rpx;
+	height: 70rpx;
+	float: right;
+}
+.price {
+	font-size: 30rpx;
+	line-height: 70rpx;
+	color: #dc663b;
+	float: left;
+}
+.num {
+	font-size: 30rpx;
+	line-height: 70rpx;
+	color: #949494;
+	float: right;
+}
+.creat_time {
+	font-size: 24rpx;
+	line-height: 26rpx;
+	color: #949494;
+	width: 490rpx;
+	float: right;
+	text-align: left;
+}
+.askrefund_list {
+	display: block;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 40rpx 30rpx;
+}
+.input_box {
+	width: 100%;
+	height: 72rpx;
+	margin-bottom: 20rpx;
+}
+.input_box2 {
+	width: 100%;
+	height: 280rpx;
+	margin-bottom: 20rpx;
+}
+.input_box label {
+	display: block;
+	width: 125rpx;
+	height: 72rpx;
+	text-align: center;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #4a4a4a;
+	float: left;
+}
+.input_box2 label {
+	display: block;
+	width: 125rpx;
+	height: 72rpx;
+	text-align: center;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #4a4a4a;
+	float: left;
+}
+.input_area {
+	width: 510rpx;
+	height: 70rpx;
+	border: 1rpx solid #dcdcdc;
+	float: right;
+	padding: 0 20rpx;
+	position: relative;
+}
+.input_area2 {
+	width: 510rpx;
+	height: 280rpx;
+	border: 1rpx solid #dcdcdc;
+	float: right;
+	padding: 0 20rpx;
+	position: relative;
+}
+.input_area .picker {
+	width: 440rpx;
+	height: 70rpx;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #7a7a7a;
+	text-align: left;
+}
+.arr_down {
+	width: 18rpx;
+	height: 16rpx;
+	background-image: url(http://wechat.jxlll.wang/images/arr_down.png);
+	background-repeat: no-repeat;
+	background-size: 18rpx 16rpx;
+	position: absolute;
+	top: 30rpx;
+	right: 20rpx;
+}
+
+.i_price {
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #d91615;
+	float: left;
+}
+.input_area input {
+	width: 70rpx;
+	height: 70rpx;
+	text-align: left;
+	display: block;
+	float: left;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #d91615;
+}
+.tips {
+	font-size: 24rpx;
+	line-height: 70rpx;
+	text-align: left;
+	width: 150rpx;
+	color: #7a7a7a;
+	float: left;
+}
+textarea {
+	width: 100%;
+	height: 280rpx;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #7a7a7a;
+}
+.submit_btn {
+	width: 668rpx;
+	height: 75rpx;
+	margin: 45rpx auto 0;
+	background-color: #3566b2;
+	color: #fff;
+	font-size: 28rpx;
+	line-height: 75rpx;
+	border-radius: 10rpx;
+}

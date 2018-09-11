@@ -1,0 +1,72 @@
+<import src="../components/tabBar.wxml"/>
+<template is="tab_bar" data="{{tabBar:bindData.tabBar}}"/>
+
+
+<view class="select_box">
+	<view class="all" bindtap="selectAll">全部</view>
+	<view class="type" bindtap="showSelectCover">筛选</view>
+</view>
+<view class="select_cover">
+	<view class="return_area" animation="{{show?leftIn:leftOut}}" bindtap="hideSelectCover"></view>
+	<view class="main_box" animation="{{show?rightIn:rightOut}}">
+		<view class="se_ti">分类</view>
+		<view class="se_cell_box">
+			<block wx:for="{{clas1}}" wx:key="">
+				<view class="se_cell {{clas1id == item.id?'active':''}}" id="{{item.id}}" catchtap="changeClas1">{{item.name}}</view>
+			</block>
+		</view>
+		<view class="se_ti">类型</view>
+		<view class="se_cell_box">
+			<block wx:for="{{clas2}}" wx:key="">
+				<view class="se_cell {{clas2id == item.id?'active':''}}" id="{{item.id}}" data-pid="{{item.parent_id}}" catchtap="changeClas2">{{item.name}}</view>
+			</block>
+		</view>
+		<view class="se_ti">城市</view>
+		<view class="se_cell_box">
+			<block wx:for="{{city1}}" wx:key="">
+				<view class="se_cell {{city1id == item.id?'active':''}}" id="{{item.id}}" catchtap="changeCity1">{{item.name}}</view>
+			</block>
+		</view>
+		<view class="se_ti">地区</view>
+		<view class="se_cell_box">
+			<block wx:for="{{city2}}" wx:key="">
+				<view class="se_cell {{city2id == item.id?'active':''}}" id="{{item.id}}" catchtap="changeCity2">{{item.name}}</view>
+			</block>
+		</view>
+		<view class="done" catchtap="done">完成</view>
+	</view>
+</view>
+
+<view class="card">
+	<view class="list_group">
+		<block wx:for="{{list}}" wx:key="">
+			<navigator class="estate_item" url="{{item.link}}" open-type="navigate" hover-class="none" id="{{item.id}}" catchtap="toPmdetail">
+				<view>
+					<image class="list_img" src="{{item.src}}" mode="scaleToFill"></image>
+					<view class="list_title">{{item.title}}</view>
+					<view class="finish_time">预计：{{item.finishDate}}<text>{{item.finishTime}}</text>结束</view>
+					<view class="circusee">
+						<text>{{item.circusee}}</text>次围观
+					</view>
+					<view class="state state1" wx:if="{{item.state == 0}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">未开始</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state0" wx:if="{{item.state == 1}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">正在进行</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state2" wx:if="{{item.state == 2}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">已结束</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+				</view>
+			</navigator>
+		</block>
+	</view>
+</view>
+
+<view class="footerbh"></view>

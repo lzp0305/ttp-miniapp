@@ -1,0 +1,35 @@
+<view class="card">
+	<form bindsubmit="userdataSubmit">
+		<view class="list_item">
+			<label for="name">姓名</label>
+			<input id="name" value="{{name}}" type="text" name="name"></input>
+		</view>
+		<view class="list_item">
+			<label for="nickname">昵称</label>
+			<input id="nickname" value="{{nickname}}" type="text" name="nickname"></input>
+		</view>
+		<view class="list_item">
+			<label for="phone">联系方式</label>
+			<input id="phone" class="phone" disabled="true" value="{{phone}}（登录账号不允许修改）" name="phone"></input>
+		</view>
+		<view class="list_item">
+			<label for="wechat">微信号</label>
+			<input id="wechat" value="{{wechat}}" type="text" name="wechat"></input>
+		</view>
+		<view class="list_item">
+			<label for="region">所在地</label>
+			<picker id="region" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" name="region">
+				<view class="picker">
+					<text name="region[0]">{{region[0]}}</text><icon></icon>
+					<text name="region[1]">{{region[1]}}</text><icon></icon>
+					<text name="region[2]">{{region[2]}}</text>
+				</view>
+			</picker>
+		</view>
+		<view class="list_item">
+			<label for="address">详细地址</label>
+			<input id="address" value="{{address}}" type="text" name="address"></input>
+		</view>
+		<button formType="submit" class="submit_btn">保存</button>
+	</form>
+</view>

@@ -1,0 +1,20 @@
+<view class="card record_box">
+	<view class="stitle">
+		竞买记录（<text>{{paycount}}</text>）
+	</view>
+	<view class="record">
+		<view class="reone ret" style="border-left: 1rpx solid #dcdcdc;">状态</view>
+		<view class="retwo ret">竞买号</view>
+		<view class="reone2 ret">价格</view>
+		<view class="rethree ret" style="border-right: 1rpx solid #dcdcdc;">时间</view>
+		<block wx:for="{{pay}}">
+			<view class="reone" style="border-left: 1rpx solid #dcdcdc;">
+				<view class="state_btn state0" wx:if="{{item.status == 1}}">领先</view>
+				<view class="state_btn state1" wx:if="{{item.status == 0}}">出局</view>
+			</view>
+			<view class="retwo">{{item.order_id}}</view>
+			<view class="reone2">{{item.price}}</view>
+			<view class="rethree" style="border-right: 1rpx solid #dcdcdc;">{{item.create_time}}</view>
+		</block>
+	</view>
+</view>

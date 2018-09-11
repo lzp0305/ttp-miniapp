@@ -1,0 +1,432 @@
+/**index.wxss**/
+
+button::after{
+border:none;
+}
+input{
+outline:none;
+border:none;
+list-style: none;
+}
+
+.search_box {
+	width: 100%;
+	height: 220rpx;
+	background-color: #2865b8;
+	overflow: hidden;
+}
+.search_form {
+	display: block;
+	width: 684rpx;
+	height: 78rpx;
+	background-color: #fff;
+	margin: 31rpx auto 0;
+	border-radius: 39rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 35rpx;
+}
+.search_input {
+	float: left;
+	width: 560rpx;
+	height: 78rpx;
+	font-size: 24rpx;
+	line-height: 78rpx;
+	color: #999;
+}
+.search_btn {
+	float: right;
+	width: 41rpx;
+	height: 41rpx;
+	padding: 0;
+	background-image: url(http://wechat.jxlll.wang/images/searchicon.png);
+	background-size: 41rpx 41rpx;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	border: 0;
+	outline: 0;
+	margin: 18.5rpx 0;
+}
+
+
+.slogan_box {
+	width: 100%;
+	height: 41rpx;
+	margin-top: 31rpx;
+}
+.slogan_text {
+	font-size: 28rpx;
+	line-height: 41rpx;
+	color: #fff;
+	margin-left: 68rpx;
+	float: left;
+}
+.tel {
+	font-size: 36rpx;
+	line-height: 41rpx;
+	color: #fff;
+	font-weight: bold;
+	font-style: italic;
+	float: right;
+	margin-right: 33rpx;
+	padding-left: 45rpx;
+	background-image: url(http://wechat.jxlll.wang/images/telicon.png);
+	background-repeat: no-repeat;
+	background-size: 39rpx 39rpx;
+}
+
+
+.index_swiper {
+	width: 100%;
+	height: 421rpx;
+}
+.index_swiper_item {
+	display: block;
+	width: 100%;
+	height: 421rpx;
+}
+
+
+.clas_box {
+	width: 100%;
+	height: 98rpx;
+	margin: 0 auto;
+	position: relative;
+	background-color: #f7f7f7;
+}
+.clas_btn_group {
+	width: 685rpx;
+	height: 159rpx;
+	background-color: #fff;
+	position: absolute;
+	top: -92rpx;
+	left: 32.5rpx;
+	border-radius: 10rpx;
+	box-shadow: 1px 1px 13px 0px rgba(3, 0, 0, 0.22);
+}
+.clas_btn {
+	display: block;
+	width: 25%;
+	height: 159rpx;
+	float: left;
+	font-size: 28rpx;
+	line-height: 65rpx;
+	padding-top: 94rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
+	color: #292929;
+	background-repeat: no-repeat;
+	background-position: center 25rpx;
+	background-size: 68rpx 68rpx;
+}
+.clas_btn1 {
+	background-image: url(http://wechat.jxlll.wang/images/clasicon1.png);
+}
+.clas_btn2 {
+	background-image: url(http://wechat.jxlll.wang/images/clasicon2.png);
+}
+.clas_btn3 {
+	background-image: url(http://wechat.jxlll.wang/images/clasicon3.png);
+}
+.clas_btn4 {
+	background-image: url(http://wechat.jxlll.wang/images/clasicon4.png);
+}
+
+
+
+.card {
+	width: 100%;
+	overflow: hidden;
+	background-color: #fff;
+	padding: 0 20rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.auction_info .top {
+	width: 100%;
+	height: 74rpx;
+	font-size: 0;
+	/* border-bottom: 1rpx solid #dcdcdc; */
+}
+.auction_info_title {
+	font-size: 28rpx;
+	line-height: 74rpx;
+	color: #2865b8;
+	font-weight: bold;
+	font-style: italic;
+	display: inline-block;
+	padding: 0 15rpx;
+	float: left;
+	position: relative;
+}
+.auction_info_title:after {
+	content: '';
+	width: 1rpx;
+	height: 38rpx;
+	position: absolute;
+	right: -1rpx;
+	top: 18rpx;
+	background-color: #dcdcdc;
+}
+.auction_scroll {
+	width: 536rpx;
+	height: 74rpx;
+	font-size: 24rpx;
+	line-height: 74rpx;
+	color: #262626;
+	float: right;
+}
+.auction_item view {
+	display: block;
+	width: calc(100% - 90rpx);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	float: left;
+}
+.auction_item icon {
+	float: right;
+	display: block;
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 15rpx;
+	margin-top: 18rpx;
+	background-image: url(http://wechat.jxlll.wang/images/auctionitemicon.png);
+	background-size: 40rpx 40rpx;
+	background-repeat: no-repeat;
+}
+
+.latest_auction_group {
+	width: 100%;
+	overflow: hidden;
+}
+
+.latest_auction_item {
+	width: 50%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 149rpx;
+	border-top: 1rpx solid #dcdcdc;
+	padding: 24rpx 8rpx 35rpx;
+	float: left;
+}
+.latest_auction_title {
+	width: calc(100% - 135rpx);
+	display: -webkit-box;
+	font-size: 24rpx;
+	line-height: 45rpx;
+	height: 90rpx;
+	color: #6d6d6d;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	float: left;
+}
+.latest_auction_img {
+	display: block;
+	width: 128rpx;
+	height: 90rpx;
+	float: right;
+}
+
+
+
+
+.title_box {
+	width: 100%;
+	height: 100rpx;
+	background-color: #f7f7f7;
+	text-align: center;
+}
+.title_box .title {
+	display: inline-block;
+	font-size: 36rpx;
+	line-height: 100rpx;
+	color: #505356;
+	font-weight: bold;
+	position: relative;
+}
+.title_box .title:before {
+	content: '';
+	position: absolute;
+	top: 39rpx;
+	left: -90rpx;
+	width: 68rpx;
+	height: 22rpx;
+	background-image: url(http://wechat.jxlll.wang/images/titlepot.png);
+	background-repeat: no-repeat;
+	background-size: 68rpx 22rpx;
+}
+.title_box .title:after {
+	content: '';
+	position: absolute;
+	top: 39rpx;
+	right: -90rpx;
+	width: 68rpx;
+	height: 22rpx;
+	background-image: url(http://wechat.jxlll.wang/images/titlepot.png);
+	background-repeat: no-repeat;
+	background-size: 68rpx 22rpx;
+}
+
+
+.flowpath {
+	height: 204rpx;
+	padding-top: 48rpx;
+	padding-bottom: 57rpx;
+}
+.flowpath image {
+	display: block;
+	width: 100%;
+	height: 99rpx;
+}
+
+.estate_tab {
+	width: 100%;
+	height: 80rpx;
+	border-top: 1rpx solid #e0e0e0;
+	border-left: 1rpx solid #e0e0e0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.estate_tab_item {
+	width: 25%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	border-right: 1rpx solid #e0e0e0;
+	border-bottom: 1rpx solid #e0e0e0;
+	font-size: 28rpx;
+	line-height: 80rpx;
+	text-align: center;
+	color: #474747;
+}
+.estate_tab .active {
+	color: #2865b8!important;
+}
+.estate_swiper {
+	height: 1100rpx;
+	margin-top: 1rpx;
+	width: 750rpx;
+	overflow-x: hidden;
+}
+.estate_item {
+	width: 100%;
+	height: 242rpx;
+	border: 1rpx solid #dcdcdc;
+	margin: 20rpx 0;
+	overflow: hidden;
+	position: relative;
+}
+.list_img {
+	display: block;
+	width: 345rpx;
+	height: 242rpx;
+	border-right: 1rpx solid #dcdcdc;
+	float: left;
+}
+.list_title {
+	width: 337rpx;
+	height: 64rpx;
+	float: right;
+	margin-right: 15rpx;
+	font-size: 24rpx;
+	color: #484848;
+	line-height: 64rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.finish_time {
+	font-size: 22rpx;
+	line-height: 25rpx;
+	color: #484848;
+	float: right;
+	width: 337rpx;
+	height: 25rpx;
+	margin-right: 15rpx;
+	text-align: left;
+}
+.finish_time text {
+	color: #d91615;
+	margin: 0 5rpx;
+}
+.circusee {
+	font-size: 22rpx;
+	line-height: 34rpx;
+	color: #707070;
+	width: 337rpx;
+	height: 34rpx;
+	float: right;
+	margin-top: 105rpx;
+	text-align: left;
+	margin-right: 15rpx;
+}
+.circusee text {
+	font-weight: bold;
+}
+.state {
+	width: 115rpx;
+	height: 115rpx;
+	position: absolute;
+	bottom: 15rpx;
+	right: 15rpx;
+}
+.state image {
+	width: 115rpx;
+	height: 115rpx;
+	background-image: url(http://wechat.jxlll.wang/images/listbg.png);
+	background-size: 115rpx 115rpx;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+.state text {
+	display: block;
+	font-size: 20rpx;
+	line-height: 28rpx;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+}
+.state_text {
+	margin-top: 27rpx;
+}
+.state0 {
+	background: linear-gradient(#ED6E69, #EA4237);
+}
+.state1 {
+	background: linear-gradient(#73cce8, #5DB4D2);
+}
+.state2 {
+	background: #afafaf;
+}
+
+
+.jg_item {
+	width: 100%;
+	margin-top: 20rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 169rpx;
+	background-size: 112rpx 112rpx;
+	background-position: 28rpx center;
+	background-repeat: no-repeat;
+	background-color: #dbe9fc;
+	padding-bottom: 12rpx;
+}
+.jg_title {
+	font-size: 30rpx;
+	line-height: 45rpx;
+	padding-top: 12rpx;
+	color: #2865b8;
+}
+.jg_content {
+	font-size: 24rpx;
+	line-height: 36rpx;
+	color: #717171;
+	padding-right: 40rpx;
+	text-align: justify;
+}

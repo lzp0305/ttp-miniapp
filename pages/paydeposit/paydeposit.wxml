@@ -1,0 +1,92 @@
+<view class="info_box">
+	<view class="info_text">
+		<text class="info_title">标的物名称：</text>
+		<text class="info_get_name">{{title}}</text>
+	</view>
+	<view class="info_text" style="border-bottom: 1rpx dashed #b9b9b9;">
+		<text class="info_title">需缴纳保证金：</text>
+		<text class="info_get_price">￥{{deposit}}</text>
+	</view>
+</view>
+<text class="explain" decode="true">
+	说明：\n此保证金仅使用于该标的。\n若竞拍不成功： 保证金将在竞买结束后3-5个工作日 自动退回\n若竞拍成功：保证金直接抵扣货款至资产处置机构账户，请在规定时间内按机构指定方式完成尾款支付。\n该标的物需缴纳保证金 {{deposit}} 元。
+</text>
+
+<view class="list_box">
+	<view class="list_title">1.竞买人请确认以下事项并勾选</view>
+	<view class="list_tag">因不符合条件参加竞买的，将取消您的竞得资格，竞买保证金不予退还并承担相应法律责任。
+	</view>
+	<view class="check_group">
+		<checkbox-group class="check_box" bindchange="aassdd1">
+			<checkbox id="ccc1" value="c1" />
+			<label for="ccc1">竞买人知晓拍下不买的后果: 保证金不予退还并承担相应的司法处罚。</label>
+		</checkbox-group>
+		<checkbox-group class="check_box" bindchange="aassdd2">
+			<checkbox id="ccc2" value="c2" />
+			<label for="ccc2">竞买人知晓本次报名仅代表本人，本人未接受任何他人委托参与本次竞拍。（如需办理委托竞买，请在报名前联系法院将委托双方信息录入系统，否则委托关系将不生效。</label>
+		</checkbox-group>
+		<checkbox-group class="check_box" bindchange="aassdd3">
+			<checkbox id="ccc3" value="c3" />
+			<label for="ccc3">竞买人知晓并同意，<text>如您报名成功，您的姓名、证件号码、手机号、联系地址等信息将披露给处置单位及相关服务提供方，用于核实竞买人的真实身份和竞买资格。</text></label>
+		</checkbox-group>
+		<checkbox-group class="check_box" bindchange="aassdd4">
+			<checkbox id="ccc4" value="c4" />
+			<label for="ccc4">竞买人已阅读并同意 《竞拍服务协议》 ，如未实地看样，视为接受标的所有瑕疵等细则</label>
+		</checkbox-group>
+	</view>
+</view>
+
+<form bindsubmit="formSubmit">
+<view class="list_box">
+	<view class="list_title">2. 竞买人身份确认标的物交割时将核实该信息，</view>
+	<view class="list_tag">
+		请保证其真实有效，如非本人购买，请提前与资产处置单位确认是否可行。
+	</view>
+	<view class="input_group">
+		<view class="area">
+			<view class="area_t"><text>*</text>竞买人姓名：</view>
+			<view class="area_c">{{name}}</view>
+		</view>
+		<view class="area">
+			<view class="area_t"><text>*</text>微信号：</view>
+			<input class="area_i" type="text"></input>
+		</view>
+		<view class="area">
+			<view class="area_t"><text>*</text>证件类型：</view>
+			<view class="area_p">
+				<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">{{array[index]}}</picker>
+				<view class="icon"></view>
+			</view>
+		</view>
+		<view class="area">
+			<view class="area_t"></view>
+			<input class="area_i" placeholder="{{array[index]}}号码" type="idcard"></input>
+		</view>
+		<view class="area">
+			<view class="area_t"><text>*</text>手机号：</view>
+			<input class="area_i" placeholder="请填写手机号码" type="number"></input>
+		</view>
+		<view class="area">
+			<view class="area_t"><text>*</text>所在地区：</view>
+			<view class="area_p noareap">
+				<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+					<view class="cor">{{region[0]}}</view>
+					<view class="cor">{{region[1]}}</view>
+					<view class="cor nori">{{region[2]}}</view>
+				</picker>
+			</view>
+		</view>
+		<view class="area">
+			<view class="area_t"><text>*</text>所在街道：</view>
+			<input class="area_i" placeholder="请输入" type="text"></input>
+		</view>
+		<view class="area">
+			<view class="area_c smlih"><icon type="success"></icon>注意：如果您是优先权人或者存在委托关系，请确保提供给资产处置单位凭证的证件号码需与微信账号的保持一致。</view>
+		</view>
+	</view>
+</view>
+
+<view class="submit_btn btnstate0" id="{{id}}">
+	<button formType="submit" hover-class="none">确认并缴纳保证金</button>
+</view>
+</form>

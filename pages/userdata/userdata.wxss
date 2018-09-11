@@ -1,0 +1,91 @@
+.card {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+}
+.list_item {
+	height: 100rpx;
+	border-bottom: 1rpx solid #efeff4;
+	position: relative;
+}
+label {
+	display: block;
+	width: 120rpx;
+	font-size: 30rpx;
+	line-height: 100rpx;
+	height: 100rpx;
+	color: #3b3b3b;
+	text-align: justify;
+	float: left;
+}
+label:after {
+	content:'';
+	display: inline-block;
+	width: 100%;
+}
+input, picker, .phone {
+	width: 526rpx;
+	height: 100rpx;
+	font-size: 24rpx;
+	line-height: 100rpx;
+	color: #999;
+	text-align: left;
+	float: right;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+picker text {
+	display: block;
+	width: 32%;
+	float: left;
+	text-align: center;
+}
+picker icon {
+	display: block;
+	width: 1rpx;
+	height: 50rpx;
+	background-color: #efeff4;
+	float: left;
+	margin-top: 25rpx;
+}
+.get_security {
+	position: absolute;
+	right: 0;
+	top: 25rpx;
+	width: 180rpx;
+	height: 50rpx;
+	font-size: 24rpx;
+	line-height: 50rpx;
+	text-align: center;
+	color: #fff;
+	background-color: #dcdcdc;
+	border: 0;
+	outline: none;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	z-index: 10;
+}
+.can_click {
+	background-color: #2865b8!important;
+}
+.dont_click {
+	background-color: #dcdcdc!important;
+}
+.get_security:after {
+	border: 0;
+	color: #fff!important;
+}
+
+.submit_btn {
+	width: 668rpx;
+	height: 75rpx;
+	margin: 45rpx auto 0;
+	background-color: #3566b2;
+	color: #fff;
+	font-size: 28rpx;
+	line-height: 75rpx;
+	border-radius: 10rpx;
+}

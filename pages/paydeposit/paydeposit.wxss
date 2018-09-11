@@ -1,0 +1,225 @@
+.info_box {
+	width: 100%;
+	height: 160rpx;
+	background-color: #eeeeee;
+	padding: 0 30rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.info_text {
+	height: 80rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.info_title {
+	font-size: 24rpx;
+	line-height: 80rpx;
+	color: #3c3c3c;
+	display: block;
+	width: 170rpx;
+	text-align: right;
+	float: left;
+}
+.info_get_name {
+	width: calc(100% - 170rpx);
+	font-size: 24rpx;
+	line-height: 80rpx;
+	float: left;
+	color: #3c3c3c;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.info_get_price {
+	width: calc(100% - 170rpx);
+	font-size: 36rpx;
+	line-height: 70rpx;
+	float: left;
+	color: #f00;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.explain {
+	display: block;
+	width: 100%;
+	padding: 0 30rpx;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	color: #3c3c3c;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #eeeeee;
+	padding-bottom: 40rpx;
+}
+.list_box {
+	width: 100%;
+	padding: 0 30rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.list_title {
+	font-size: 24rpx;
+	line-height: 40rpx;
+	margin-top: 26rpx;
+	font-weight: bold;
+}
+.list_tag {
+	font-size: 20rpx;
+	line-height: 30rpx;
+	padding-left: 20rpx;
+	margin-top: 13rpx;
+	color: #A67500;
+	text-align: justify;
+}
+.check_group {
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+}
+.check_box {
+	padding-left: 75rpx;
+	position: relative;
+	margin-bottom: 23rpx;
+	text-align: justify;
+}
+.check_box checkbox {
+	display: block;
+	position: absolute;
+	left: 30rpx;
+	top: 10rpx;
+	width: 30rpx;
+	height: 30rpx;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+}
+.check_box label {
+	font-size: 24rpx;
+	line-height: 36rpx;
+}
+.check_box label text {
+	color: #ff0000;
+}
+
+.input_group {
+	width: 100%;
+	margin-top: 20rpx;
+	padding-bottom: 200rpx;
+}
+.area {
+	width: 100%;
+	height: 100rpx;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-bottom: 30rpx;
+}
+.area_t {
+	width: 170rpx;
+	height: 70rpx;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #7b7b7b;
+	float: left;
+	text-align: right;
+}
+.area_t text {
+	color: #f00;
+}
+.area_c {
+	width: 500rpx;
+	float: right;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #222;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 15rpx;
+}
+.area_i {
+	width: 500rpx;
+	height: 70rpx;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1rpx solid #dcdcdc;
+	float: right;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #222;
+	padding: 0 15rpx;
+}
+.area_p {
+	width: 500rpx;
+	height: 70rpx;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1rpx solid #dcdcdc;
+	float: right;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	color: #222;
+	padding: 0 15rpx;
+	position: relative;
+}
+.noareap {
+	padding: 0!important;
+}
+.icon {
+	width: 21rpx;
+	height: 11rpx;
+	position: absolute;
+	top: 30rpx;
+	right: 20rpx;
+	background-image: url(http://wechat.jxlll.wang/images/select.png);
+	background-size: 21rpx 11rpx;
+	background-repeat: no-repeat;
+	background-position: center 0;
+}
+.cor {
+	width: calc(1/3 * 100%);
+	float: left;
+	text-align: center;
+	border-right: 1rpx solid #dcdcdc;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.nori {
+	border-right: 0;
+}
+.smlih {
+	line-height: 36rpx;
+}
+.smlih icon {
+	position: relative;
+	top: 10rpx;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+}
+.submit_btn {
+	width: 100%;
+	height: 90rpx;
+	text-align: center;
+	font-size: 30rpx;
+	line-height: 90rpx;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1001;
+}
+.submit_btn button {
+	background-color: #2865b8!important;
+	color: #fff;
+}
+.submit_btn button::after {
+	border: 0;
+	background-color: #2865b8;
+	opacity: 0;
+}
+.btnstate0 {
+	background-color: #2865b8;
+	color: #fff!important;
+}

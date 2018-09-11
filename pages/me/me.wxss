@@ -1,0 +1,100 @@
+.show {
+	display: block!important;
+}
+.hide {
+	display: none!important;
+}
+
+.user_top {
+	width: 100%;
+	height: 280rpx;
+	background-image: url(http://wechat.jxlll.wang/images/userbg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 280rpx;
+}
+.user_avatar {
+	display: block;
+	width: 110rpx;
+	height: 110rpx;
+	float: left;
+	margin-left: 43rpx;
+	margin-top: 88rpx;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.user_name {
+	width: 300rpx;
+	height: 110rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 24rpx;
+	text-align: left;
+	background-color: transparent;
+	font-size: 30rpx;
+	line-height: 110rpx;
+	color: #efefef;
+	margin: 0;
+	border: 0;
+	outline: none;
+	border-radius: 0;
+	float: left;
+	margin-top: 88rpx;
+}
+.login:after {
+	border: none;
+}
+
+.edit_info {
+	display: block;
+	width: 144rpx;
+	height: 64rpx;
+	border: 1rpx solid #fff;
+	font-size: 24rpx;
+	line-height: 64rpx;
+	text-align: center;
+	color: #fff;
+	float: right;
+	margin-top: 111rpx;
+	margin-right: 46rpx;
+	border-radius: 32rpx;
+}
+
+.card {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border-top: 20rpx solid #f4f4f4;
+	background-color: #fff;
+}
+.order_bar {
+	overflow: hidden;
+}
+.me_item {
+	padding-top: 82rpx;
+	padding-bottom: 24rpx;
+	font-size: 24rpx;
+	line-height: 64rpx;
+	width: 20%;
+	height: 64rpx;
+	float: left;
+	background-repeat: no-repeat;
+	background-size: 45rpx 45rpx;
+	background-position: center 37rpx;
+	text-align: center;
+}
+.list_group {
+	padding: 0 30rpx;
+}
+.me_list_item {
+	display: block;
+	height: 111rpx;
+	border-bottom: 1rpx solid #f3f3f3;
+	background-repeat: no-repeat;
+	background-size: 45rpx 45rpx;
+	background-position: right 0 center;
+	font-size: 30rpx;
+	line-height: 111rpx;
+	color: #010101;
+	text-align: left;
+	text-indent: 5rpx;
+}

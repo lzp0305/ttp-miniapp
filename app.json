@@ -1,0 +1,30 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/classify/classify",
+		"pages/service/service",
+		"pages/me/me",
+		"pages/userdata/userdata",
+		"pages/order/order",
+		"pages/askrefund/askrefund",
+		"pages/pmdetail/pmdetail",
+		"pages/paydeposit/paydeposit",
+		"pages/login/login",
+		"pages/prelogin/prelogin",
+		"pages/fwdetail/fwdetail",
+		"pages/zcorder/zcorder",
+		"pages/zlorder/zlorder",
+		"pages/newslist/newslist",
+		"pages/newsdetail/newsdetail",
+		"pages/affiche/affiche",
+		"pages/notice/notice",
+		"pages/record/record",
+		"pages/qanda/qanda"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor":  "#fff",
+		"navigationBarTitleText":  "天平拍",
+		"navigationBarTextStyle": "black"
+	}
+}

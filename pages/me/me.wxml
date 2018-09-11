@@ -1,0 +1,38 @@
+<import src="../components/tabBar.wxml"/>
+<template is="tab_bar" data="{{tabBar:bindData.tabBar}}"/>
+
+
+<view class="user_top">
+	<image class="user_avatar" src="{{avatar}}" mode="scaleToFill"></image>
+	<view lang="zh_CN" class="user_name">{{nickname}}</view>
+	<navigator class="edit_info" url="/pages/userdata/userdata" open-type="navigate">编辑资料</navigator>
+</view>
+
+
+<view class="card order_bar">
+	<navigator class="me_item" url="/pages/order/order?on=0" open-type="navigate" style="background-image:url(http://wechat.jxlll.wang/images/me-allorders.png)">全部订单</navigator>
+	<navigator class="me_item" url="/pages/order/order?on=1" open-type="navigate" style="background-image:url(http://wechat.jxlll.wang/images/me-obligation.png)">待付款</navigator>
+	<navigator class="me_item" url="/pages/order/order?on=2" open-type="navigate" style="background-image:url(http://wechat.jxlll.wang/images/me-paid.png)">已付款</navigator>
+	<navigator class="me_item" url="/pages/order/order?on=3" open-type="navigate" style="background-image:url(http://wechat.jxlll.wang/images/me-finished.png)">已完成</navigator>
+	<navigator class="me_item" url="/pages/order/order?on=4" open-type="navigate" style="background-image:url(http://wechat.jxlll.wang/images/me-refund.png)">退款</navigator>
+</view>
+
+
+
+<view class="card list_group">
+	<navigator class="me_list_item" url="/pages/userdata/userdata" open-type="navigate" style="background-image:url(http://wechat.jxlll.wang/images/me-l1.png)">基本资料</navigator>
+	<navigator class="me_list_item" url="/pages/zcorder/zcorder" open-type="navigate" style="background-image:url(http://wechat.jxlll.wang/images/me-l2.png)">资产公拍</navigator>
+	<navigator class="me_list_item" url="/pages/zlorder/zlorder" open-type="navigate" style="background-image:url(http://wechat.jxlll.wang/images/me-l3.png)">租赁公拍</navigator>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<view class="footerbh"></view>

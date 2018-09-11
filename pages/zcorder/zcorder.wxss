@@ -1,0 +1,156 @@
+::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	color: transparent;
+}
+.order_tab {
+	width: 100%;
+	height: 98rpx;
+	background-color: #2865b8;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+.order_tab_item {
+	width: 50%;
+	height: 98rpx;
+	float: left;
+	font-size: 30rpx;
+	line-height: 83rpx;
+	text-align: center;
+	color: #fff;
+}
+.active .on_light {
+	display: block;
+}
+.on_light {
+	display: none;
+	width: 20rpx;
+	height: 4rpx;
+	background-color: #fff;
+	margin: -16rpx auto 0;
+}
+page {
+	height: 100%;
+}
+swiper {
+	height: calc(100% - 188rpx);
+	padding-top: 98rpx;
+}
+
+.list_item {
+	width: 100%;
+	height: 335rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border-bottom: 20rpx solid #eaeaea;
+	padding: 40rpx 30rpx 0;
+	background-color: #fff;
+	position: relative;
+}
+.list_item_link {
+	overflow: hidden;
+}
+.order_img {
+	display: block;
+	width: 180rpx;
+	height: 126rpx;
+	float: left;
+}
+.state {
+	width: 110rpx;
+	height: 55rpx;
+	float: right;
+	margin-top: 18.5rpx;
+	margin-right: 0;
+	font-size: 24rpx;
+	line-height: 55rpx;
+	text-align: center;
+}
+.state0 {
+	background-color: #3566b2;
+	color: #fff;
+}
+.state1 {
+	border: 1rpx solid #dcdcdc;
+	color: #515151;
+}
+.title {
+	display: -webkit-box;
+	width: 490rpx;
+	font-size: 30rpx;
+	line-height: 36rpx;
+	height: 72rpx;
+	color: #323232;
+	text-align: left;
+	float: right;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:2;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+.prics_and_num {
+	width: 490rpx;
+	height: 70rpx;
+	float: right;
+}
+.price {
+	font-size: 30rpx;
+	line-height: 70rpx;
+	color: #949494;
+	float: left;
+}
+.num {
+	font-size: 30rpx;
+	line-height: 70rpx;
+	color: #949494;
+	float: right;
+}
+.textcont {
+	float: left;
+	font-size: 24rpx;
+	line-height: 92rpx;
+	color: #949494;
+	margin-right: 50rpx;
+}
+.creat_time {
+	font-size: 24rpx;
+	line-height: 26rpx;
+	color: #949494;
+	width: 490rpx;
+	float: right;
+	text-align: left;
+}
+.operation_bar {
+	width: calc(100% - 60rpx);
+	height: 92rpx;
+	position: absolute;
+	bottom: 0;
+	left: 30rpx;
+	border-top: 1rpx solid #dcdcdc;
+}
+.oba {
+	width: 144rpx;
+	height: 64rpx;
+	font-size: 24rpx;
+	line-height: 64rpx;
+	text-align: center;
+	border-radius: 32rpx;
+	margin-left: 20rpx;
+	float: right;
+	margin-top: 12rpx;
+}
+.oba_goforpay {
+	border: 1rpx solid #8aaee6;
+	color: #2865b8;
+}
+.oba_cancelorder,.oba_askrefund,.oba_refunding,.oba_delete {
+	border: 1rpx solid #dedede;
+	color: #9d9d9d;
+}
+/* .oba_delete {
+	border: 1rpx solid #dc663b;
+	color: #dc663b;
+} */

@@ -1,0 +1,24 @@
+<import src="../components/tabBar.wxml"/>
+<template is="tab_bar" data="{{tabBar:bindData.tabBar}}"/>
+
+<view class="card">
+	<view class="twice_lawyer">
+		<block wx:for="{{twiceLawyer}}">
+			<view class="tl_item" id="{{item.id}}" catchtap="toFwdetail">
+				<image class="tl_img" src="{{item.good_img}}" mode="scaleToFill"></image>
+				<view class="tl_title">{{item.good_title}}</view>
+				<view class="tl_li">
+					<view class="tl_tt">地区</view>
+					<view class="tl_co">{{item.address}}</view>
+				</view>
+				<view class="tl_li">
+					<view class="tl_tt">当前价</view>
+					<view class="tl_co">
+						<view class="tl_yuan">￥</view>
+						<view class="tl_pp">{{item.price}}</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>

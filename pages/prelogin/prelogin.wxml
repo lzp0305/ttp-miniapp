@@ -1,0 +1,6 @@
+<view class="cover">
+	<view class="center_box">
+		<view class="notice">点击下面的【授权】按钮会出现授权提示框，请点击【确定】，否则会影响后续操作</view>
+		<button class="submit_btn" open-type="getUserInfo" bindtap="accredit" bindgetuserinfo='bindGetUserInfo'>{{text}}</button>
+	</view>
+</view>

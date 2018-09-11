@@ -1,0 +1,55 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="top_box">
+	<swiper autoplay="true" circular="true">
+		<block wx:for="{{src}}">
+			<swiper-item>
+				<image class="detail_img" src="{{item.image}}" mode="scaleToFill"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+
+<view class="card info">
+	<view class="title">{{title}}</view>
+	<view class="company">{{company}}</view>
+	<view class="info_list" style="width: 100%;">
+		<view class="ilt">价格：</view>
+		<view class="ilc">
+			<text class="price">{{price}}</text>
+			<text class="yuan">元</text>
+		</view>
+	</view>
+	<view class="info_list" style="width: 100%;">
+		<view class="ilt">成交：</view>
+		<view class="ilc">{{total_income}}笔</view>
+	</view>
+	<view class="info_list" style="width: 100%">
+		<view class="ilt">服务承诺：</view>
+		<view class="ilc" style="padding-left: 40rpx;"><icon class="sevenday"></icon>7天无理由退款</view>
+	</view>
+</view>
+
+
+
+<view class="card">
+	<view class="stitle">
+		产品详情
+	</view>
+	<view class="content">
+		<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+	</view>
+</view>
+
+
+
+
+
+
+<view class="submit_btn btnstate0" wx:if="{{fwState == '0'}}" id="{{id}}">
+	<text>请先登录</text>
+</view>
+
+<view class="submit_btn btnstate0" wx:if="{{fwState == '1'}}" id="{{id}}" catchtap="payit">
+	<text>立即购买</text>
+</view>

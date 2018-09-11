@@ -1,0 +1,10 @@
+<view class="card_group">
+	<block wx:for="{{list}}">
+		<view class="card" id="{{item.id}}" catchtap="toNewsdetail">
+			<view class="title">{{item.title}}</view>
+			<view class="abstract">{{item.description}}</view>
+			<image class="img" src="{{item.image}}" mode="scaleToFill"></image>
+			<view class="date">{{item.create_at}}</view>
+		</view>
+	</block>
+</view>

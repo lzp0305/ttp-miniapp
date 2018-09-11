@@ -1,0 +1,357 @@
+<import src="../components/tabBar.wxml"/>
+<template is="tab_bar" data="{{tabBar:bindData.tabBar}}"/>
+
+<!-- 头部搜索 -->
+<view class="search_box">
+	<form bindsubmit="searchSubmit" class="search_form">
+		<input class="search_input" name="keywords" placeholder="标的物名称/地理位置"/>
+		<button formType="submit" class="search_btn"/>
+	</form>
+	<view class="slogan_box">
+		<view class="slogan_text">公开·公平·透明</view>
+		<view class="tel" bindtap="openCall">400-198-1092</view>
+	</view>
+</view>
+
+
+<!-- 轮播图 -->
+<swiper class="index_swiper" autoplay="true" circular="true">
+	<block wx:for="{{bannerImg}}" wx:key="*this">
+		<swiper-item>
+			<!-- <navigator class="index_swiper_link" url="" open-type="navigate" id="item.id"  catchtap="toPmdetail"> -->
+				<image class="index_swiper_item" src="{{item.src}}" mode="scaleToFill"></image>
+			<!-- </navigator> -->
+		</swiper-item>
+	</block>
+</swiper>
+
+
+<!-- 四个分类按钮 -->
+<view class="clas_box">
+	<view class="clas_btn_group">
+		<navigator class="clas_btn clas_btn1" url="" id="1" open-type="navigate" catchtap="toClassify">不动产公拍</navigator>
+		<navigator class="clas_btn clas_btn2" url="" id="4" open-type="navigate" catchtap="toClassify">租赁公拍</navigator>
+		<navigator class="clas_btn clas_btn3" url="/pages/newslist/newslist" open-type="navigate">公拍法律</navigator>
+		<navigator class="clas_btn clas_btn4" url="" open-type="navigate">关于我们</navigator>
+	</view>
+</view>
+
+
+
+<!-- 公拍信息 -->
+<view class="auction_info card">
+	<view class="top">
+		<view class="auction_info_title">公拍信息</view>
+		<!-- 公拍信息头部上下轮播，已经做成了不允许拖拽的形式 -->
+		<swiper class="auction_scroll" vertical="true" autoplay="true" circular="true" interval="2500">
+			<block wx:for="{{auctionInfo}}" wx:key="*this">
+				<swiper-item catchtouchmove="notAllTouch">
+					<navigator class="auction_item" url="" open-type="navigate" id="{{item.id}}" catchtap="toNewsdetail">
+						<view>{{item.title}}</view>
+						<icon></icon>
+					</navigator>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<!-- 公拍信息下面四个项目 -->
+	<view class="latest_auction_group">
+		<block wx:for="{{latestAuction}}" wx:key="*this">
+			<navigator url="{{item.link}}" class="latest_auction_item" open-type="navigate" id="{{item.id}}" catchtap="toNewsdetail">
+				<view class="latest_auction_title">{{item.title}}</view>
+				<image class="latest_auction_img" src="{{item.src}}" mode="scaleToFill"></image>
+			</navigator>
+		</block>
+	</view>
+</view>
+
+
+
+
+
+<!-- 竞拍流程 -->
+<view class="title_box">
+	<view class="title">竞拍流程</view>
+</view>
+<view class="card flowpath">
+	<image class="" src="http://wechat.jxlll.wang/images/flowpath.png" mode="scaleToFill"></image>
+</view>
+
+
+<!-- 不动产公拍 -->
+<view class="title_box">
+	<view class="title">不动产公拍</view>
+</view>
+
+
+<view class="estate_tab">
+	<view class="estate_tab_item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">不动产</view>
+	<view class="estate_tab_item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">动产</view>
+	<view class="estate_tab_item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">宜春</view>
+	<view class="estate_tab_item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">南昌</view>
+</view>
+<!--
+不动产 		Estate
+动产 		Property
+宜春 		Yichun
+南昌 		Nanchang
+-->
+<swiper current="{{currentTab}}" bindchange="swiperTab" duration="300" class="estate_swiper">
+	<swiper-item class="card">
+		<block wx:for="{{BDCEstate}}" wx:key="*this">
+			<navigator class="estate_item" url="{{item.link}}" open-type="navigate" hover-class="none" id="{{item.id}}" catchtap="toPmdetail">
+				<view>
+					<image class="list_img" src="{{item.src}}" mode="scaleToFill"></image>
+					<view class="list_title">{{item.title}}</view>
+					<view class="finish_time">预计：{{item.finishDate}}<text>{{item.finishTime}}</text>结束</view>
+					<view class="circusee">
+						<text>{{item.circusee}}</text>次围观
+					</view>
+					<view class="state state1" wx:if="{{item.state == 0}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">未开始</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state0" wx:if="{{item.state == 1}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">正在进行</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state2" wx:if="{{item.state == 2}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">已结束</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+				</view>
+			</navigator>
+		</block>
+	</swiper-item>
+	<swiper-item class="card">
+		<block wx:for="{{BDCProperty}}" wx:key="*this">
+			<navigator class="estate_item" url="{{item.link}}" open-type="navigate" hover-class="none" id="{{item.id}}" catchtap="toPmdetail">
+				<view>
+					<image class="list_img" src="{{item.src}}" mode="scaleToFill"></image>
+					<view class="list_title">{{item.title}}</view>
+					<view class="finish_time">预计：{{item.finishDate}}<text>{{item.finishTime}}</text>结束</view>
+					<view class="circusee">
+						<text>{{item.circusee}}</text>次围观
+					</view>
+					<view class="state state1" wx:if="{{item.state == 0}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">未开始</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state0" wx:if="{{item.state == 1}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">正在进行</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state2" wx:if="{{item.state == 2}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">已结束</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+				</view>
+			</navigator>
+		</block>
+	</swiper-item>
+	<swiper-item class="card">
+		<block wx:for="{{BDCYichun}}" wx:key="*this">
+			<navigator class="estate_item" url="{{item.link}}" open-type="navigate" hover-class="none" id="{{item.id}}" catchtap="toPmdetail">
+				<view>
+					<image class="list_img" src="{{item.src}}" mode="scaleToFill"></image>
+					<view class="list_title">{{item.title}}</view>
+					<view class="finish_time">预计：{{item.finishDate}}<text>{{item.finishTime}}</text>结束</view>
+					<view class="circusee">
+						<text>{{item.circusee}}</text>次围观
+					</view>
+					<view class="state state1" wx:if="{{item.state == 0}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">未开始</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state0" wx:if="{{item.state == 1}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">正在进行</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state2" wx:if="{{item.state == 2}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">已结束</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+				</view>
+			</navigator>
+		</block>
+	</swiper-item>
+	<swiper-item class="card">
+		<block wx:for="{{BDCNanchang}}" wx:key="*this">
+			<navigator class="estate_item" url="{{item.link}}" open-type="navigate" hover-class="none" id="{{item.id}}" catchtap="toPmdetail">
+				<view>
+					<image class="list_img" src="{{item.src}}" mode="scaleToFill"></image>
+					<view class="list_title">{{item.title}}</view>
+					<view class="finish_time">预计：{{item.finishDate}}<text>{{item.finishTime}}</text>结束</view>
+					<view class="circusee">
+						<text>{{item.circusee}}</text>次围观
+					</view>
+					<view class="state state1" wx:if="{{item.state == 0}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">未开始</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state0" wx:if="{{item.state == 1}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">正在进行</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state2" wx:if="{{item.state == 2}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">已结束</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+				</view>
+			</navigator>
+		</block>
+	</swiper-item>
+</swiper>
+
+
+<!-- 租赁公拍 -->
+<view class="title_box">
+	<view class="title">租赁公拍</view>
+</view>
+
+<view class="estate_tab">
+	<view class="estate_tab_item {{currentTab2==0?'active':''}}" data-current="0" bindtap="clickTab2" style="width: calc(1/3*100%)">土地</view>
+	<!-- <view class="estate_tab_item {{currentTab2==1?'active':''}}" data-current="1" bindtap="clickTab2">动产</view> -->
+	<view class="estate_tab_item {{currentTab2==1?'active':''}}" data-current="1" bindtap="clickTab2" style="width: calc(1/3*100%)">宜春</view>
+	<view class="estate_tab_item {{currentTab2==2?'active':''}}" data-current="2" bindtap="clickTab2" style="width: calc(1/3*100%)">南昌</view>
+</view>
+<swiper current="{{currentTab2}}" bindchange="swiperTab2" duration="300" class="estate_swiper">
+	<swiper-item class="card">
+		<block wx:for="{{ZLLand}}" wx:key="*this">
+			<navigator class="estate_item" url="{{item.link}}" open-type="navigate" hover-class="none" id="{{item.id}}" catchtap="toPmdetail">
+				<view>
+					<image class="list_img" src="{{item.src}}" mode="scaleToFill"></image>
+					<view class="list_title">{{item.title}}</view>
+					<view class="finish_time">预计：{{item.finishDate}}<text>{{item.finishTime}}</text>结束</view>
+					<view class="circusee">
+						<text>{{item.circusee}}</text>次围观
+					</view>
+					<view class="state state1" wx:if="{{item.state == 0}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">未开始</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state0" wx:if="{{item.state == 1}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">正在进行</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state2" wx:if="{{item.state == 2}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">已结束</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+				</view>
+			</navigator>
+		</block>
+	</swiper-item>
+	<swiper-item class="card">
+		<block wx:for="{{ZLYichun}}" wx:key="*this">
+			<navigator class="estate_item" url="{{item.link}}" open-type="navigate" hover-class="none" id="{{item.id}}" catchtap="toPmdetail">
+				<view>
+					<image class="list_img" src="{{item.src}}" mode="scaleToFill"></image>
+					<view class="list_title">{{item.title}}</view>
+					<view class="finish_time">预计：{{item.finishDate}}<text>{{item.finishTime}}</text>结束</view>
+					<view class="circusee">
+						<text>{{item.circusee}}</text>次围观
+					</view>
+					<view class="state state1" wx:if="{{item.state == 0}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">未开始</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state0" wx:if="{{item.state == 1}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">正在进行</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state2" wx:if="{{item.state == 2}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">已结束</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+				</view>
+			</navigator>
+		</block>
+	</swiper-item>
+	<swiper-item class="card">
+		<block wx:for="{{ZLNanchang}}" wx:key="*this">
+			<navigator class="estate_item" url="{{item.link}}" open-type="navigate" hover-class="none" id="{{item.id}}" catchtap="toPmdetail">
+				<view>
+					<image class="list_img" src="{{item.src}}" mode="scaleToFill"></image>
+					<view class="list_title">{{item.title}}</view>
+					<view class="finish_time">预计：{{item.finishDate}}<text>{{item.finishTime}}</text>结束</view>
+					<view class="circusee">
+						<text>{{item.circusee}}</text>次围观
+					</view>
+					<view class="state state1" wx:if="{{item.state == 0}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">未开始</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state0" wx:if="{{item.state == 1}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">正在进行</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+					<view class="state state2" wx:if="{{item.state == 2}}">
+						<image class="" src="http://wechat.jxlll.wang/images/listbg.png" mode="scaleToFill"></image>
+						<text class="state_text">已结束</text>
+						<text class="bid_number">{{item.bidNumber}}次出价</text>
+					</view>
+				</view>
+			</navigator>
+		</block>
+	</swiper-item>
+</swiper>
+
+
+
+
+
+<!-- 交割流程 -->
+<view class="title_box">
+	<view class="title">交割流程</view>
+</view>
+<view class="card" style="margin-bottom: 20rpx;">
+	<view class="jg_item" style="background-image: url(http://wechat.jxlll.wang/images/jg1.png)">
+		<view class="jg_title">交割：</view>
+		<view class="jg_content">即拍卖成交的标的交付于买受人。标的交割的方法详见拍品所在页面的《拍卖特别规定》或《标的特别约定》。</view>
+	</view>
+	<view class="jg_item" style="background-image: url(http://wechat.jxlll.wang/images/jg2.png)">
+		<view class="jg_title">以司法拍卖的房地产为例</view>
+		<view class="jg_content">标的交割的前提是，买受人按照拍卖规定付清拍卖成交款后。</view>
+	</view>
+	<view class="jg_item" style="background-image: url(http://wechat.jxlll.wang/images/jg3.png)">
+		<view class="jg_title">以司法拍卖的房地产为例</view>
+		<view class="jg_content">标的交割的基本流程是，拍卖公司代被执行人（房地产权利人）缴纳营业税、房产税（如果有），买受人缴纳房地产契税，法院出具《民事裁定书》、《协助执行通知书》，买受人办理房地产交易过户手续，取得房地产权证，向相关机构领取房地产钥匙。</view>
+	</view>
+	<view class="jg_item" style="background-image: url(http://wechat.jxlll.wang/images/jg4.png)">
+		<view class="jg_title">以司法拍卖车辆为例</view>
+		<view class="jg_content">标的交割是“办证交车”即买受人所交付的拍卖保证金不转为拍卖成交价，转为履约保证金，买受人付清拍卖成交价款和拍卖佣金，等候法院通知，在获取法院出具的《民事裁定书》、《协助执行通知书》办理车辆过户手续，在获得新的《行驶证》后，与拍卖公司签署《车辆交接书》，完成标的交割。</view>
+	</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<view class="footerbh"></view>

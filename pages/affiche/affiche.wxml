@@ -1,0 +1,7 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="card">
+	<view class="stitle">竞买公告</view>
+	<view class="container">
+		<template is="wxParse" data="{{wxParseData:affiche.nodes}}"/>
+	</view>
+</view>

@@ -1,0 +1,59 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wx262420bb1a62e2d8",
+	"projectname": "%E5%A4%A9%E5%B9%B3%E6%8B%8D",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "me",
+					"pathName": "pages/me/me",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "newsdetial",
+					"pathName": "pages/newsdetail/newsdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "qanda",
+					"pathName": "pages/qanda/qanda",
+					"query": ""
+				}
+			]
+		}
+	}
+}

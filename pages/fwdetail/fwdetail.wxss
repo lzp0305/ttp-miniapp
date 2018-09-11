@@ -1,0 +1,559 @@
+@import "../../wxParse/wxParse.wxss";
+.top_box {
+	width: 100%;
+	height: 533rpx;
+	position: relative;
+}
+.top_box swiper {
+	width: 100%;
+	height: 533rpx;
+}
+.detail_img {
+	display: block;
+	width: 100%;
+	height: 533rpx;
+}
+.ilt {
+	width: 130rpx;
+	height: 60rpx;
+	float: left;
+	text-align: right;
+}
+.ilc {
+	height: 60rpx;
+	float: left;
+	position: relative;
+}
+.sevenday {
+	display: block;
+	/* float: left; */
+	width: 31rpx;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-image: url(http://wechat.jxlll.wang/images/sevenday.png);
+	background-repeat: no-repeat;
+	background-size: 31rpx 28rpx;
+	background-position: center center;
+}
+
+
+.card {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+	border-bottom: 20rpx solid #eeeeee;
+	overflow: hidden;
+}
+
+.info {
+	padding-bottom: 20rpx;
+}
+
+.info .title {
+	width: 100%;
+	height: 79rpx;
+	font-size: 30rpx;
+	line-height: 79rpx;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #333;
+}
+
+.info .company {
+	width: 100%;
+	height: 24rpx;
+	font-size: 22rpx;
+	line-height: 24rpx;
+	color: #757575;
+	padding-bottom: 15rpx;
+	border-bottom: 1rpx solid #dcdcdc;
+}
+.info_list .price {
+	font-size: 40rpx;
+	color: #d91615;
+	margin-right: 10rpx;
+	font-weight: bold;
+}
+.info_list .yuan {
+	color: #d91615;
+}
+.info .price_box .who_box {
+	width:250rpx;
+	height:46rpx;
+	font-size:24rpx;
+	line-height:46rpx;
+	position:absolute;
+	top:27rpx;
+	right:10rpx;
+	border:1rpx solid #dcdcdc;
+	background-color:#fff;
+	text-align:center;
+	color:#757575;
+}
+.info .price_box .who{
+	color: #333;
+}
+.info .info_list {
+	width: 50%;
+	height: 60rpx;
+	font-size: 24rpx;
+	line-height: 60rpx;
+	color: #757575;
+	float: left;
+}
+
+
+
+
+.stitle {
+	width: 100%;
+	height: 69rpx;
+	font-size: 30rpx;
+	line-height: 69rpx;
+	color: #454545;
+	border-bottom: 1rpx solid #dcdcdc;
+}
+.stitle_link {
+	float: right;
+	font-size: 24rpx;
+	line-height: 69rpx;
+	color: #2865b8;
+}
+.stitle text {
+	color: #2865b8;
+}
+.flow_step {
+	width: calc(100% - 30rpx);
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 40rpx;
+	margin-left: 30rpx;
+	position: relative;
+	padding-bottom: 32rpx;
+	border-left: 1rpx solid #dcdcdc;
+	overflow: visible;
+}
+.flow_step:last-child {
+	border-left: none;
+}
+.step_title {
+	font-size: 30rpx;
+	line-height: 63rpx;
+	color: #000;
+}
+.step_detail {
+	font-size: 24rpx;
+	line-height: 48rpx;
+	color: #616161;
+	text-align: justify;
+}
+.number {
+	position: absolute;
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 30rpx;
+	border: 1rpx solid #dcdcdc;
+	font-size: 30rpx;
+	line-height: 60rpx;
+	text-align: center;
+	color: #959595;
+	top: 0;
+	left: -31rpx;
+	background-color: #fff;
+}
+.notice {
+	display: -webkit-box;
+	width: 100%;
+	height: 192rpx;
+	margin-top: 9rpx;
+	margin-bottom: 56rpx;
+	color: #616161;
+	font-size: 24rpx;
+	line-height: 48rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:4;
+}
+.notice view {
+	font-size: 24rpx!important;
+	line-height: 48rpx!important;
+}
+.needknow {
+	display: -webkit-box;
+	width: 100%;
+	height: 144rpx;
+	margin-top: 9rpx;
+	margin-bottom: 56rpx;
+	color: #616161;
+	font-size: 24rpx;
+	line-height: 48rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:3;
+}
+.needknow  view {
+	font-size: 24rpx!important;
+	line-height: 48rpx!important;
+}
+
+
+.top_qa {
+	margin-top: 20rpx;
+	padding-bottom: 34rpx;
+}
+.item_q {
+	width: 100%;
+	padding-left: 50rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	background-image: url(http://wechat.jxlll.wang/images/q.png);
+	background-repeat: no-repeat;
+	background-size: 36rpx 36rpx;
+	background-position: 0 0;
+	font-size: 24rpx;
+	line-height: 36rpx;
+	color: #333;
+	font-weight: bold;
+}
+
+.item_a {
+	display: -webkit-box;
+	width: 100%;
+	padding-left: 50rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background-image: url(http://wechat.jxlll.wang/images/a.png);
+	background-repeat: no-repeat;
+	background-size: 36rpx 36rpx;
+	background-position: 0 1rpx;
+	font-size: 24rpx;
+	line-height: 38rpx;
+	margin-top: 20rpx;
+	height: 76rpx;
+	color: #767676;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:2;
+}
+
+.content {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 40rpx;
+}
+
+.record_box {
+	padding-bottom: 40rpx;
+}
+.record {
+	margin-top: 20rpx;
+	border-top: 1rpx solid #dcdcdc;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.ret {
+	font-size: 24rpx!important;
+	color: #000!important;
+}
+.reone {
+	width: 15%;
+	height: 59rpx;
+	line-height: 59rpx;
+	text-align: center;
+	border-bottom: 1rpx solid #dcdcdc;
+	float: left;
+	position: relative;
+	font-size: 24rpx;
+	color: #2865b8;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.reone2 {
+	width: 20%;
+	height: 59rpx;
+	line-height: 59rpx;
+	text-align: center;
+	border-bottom: 1rpx solid #dcdcdc;
+	float: left;
+	position: relative;
+	font-size: 24rpx;
+	color: #2865b8;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.state0 {
+	width: 70rpx;
+	height: 35rpx;
+	background-color: #2865b8;
+	font-size: 20rpx;
+	line-height: 35rpx;
+	border-radius: 2rpx;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.state1 {
+	width: 70rpx;
+	height: 35rpx;
+	background-color: #fff;
+	font-size: 20rpx;
+	line-height: 35rpx;
+	border-radius: 2rpx;
+	color: #686868;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1rpx solid #dcdcdc;
+}
+.retwo {
+	width: 25%;
+	height: 59rpx;
+	line-height: 59rpx;
+	text-align: center;
+	border-bottom: 1rpx solid #dcdcdc;
+	float: left;
+	font-size: 24rpx;
+	color: #2865b8;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.rethree {
+	width: 40%;
+	height: 59rpx;
+	line-height: 59rpx;
+	text-align: center;
+	border-bottom: 1rpx solid #dcdcdc;
+	float: left;
+	font-size: 20rpx;
+	color: #2865b8;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.twice_lawyer {
+	width: 720rpx;
+	overflow: hidden;
+	margin-top: 20rpx;
+	padding-bottom: 150rpx;
+}
+.tl_item {
+	width: 330rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1rpx solid #dcdcdc;
+	float: left;
+	margin-right: 30rpx;
+}
+.tl_img {
+	display: block;
+	width: 100%;
+	height: 231rpx;
+	border-bottom: 1rpx solid #dcdcdc;
+}
+.tl_title {
+	width: 100%;
+	height: 52rpx;
+	font-size: 24rpx;
+	line-height: 52rpx;
+	color: #4a4a4a;
+	font-weight: bold;
+	padding: 0 15rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.tl_li {
+	width: 100%;
+	height: 29rpx;
+	margin-bottom: 12rpx;
+}
+.tl_tt {
+	width: 80rpx;
+	float: left;
+	text-align: right;
+	font-size: 22rpx;
+	line-height: 29rpx;
+	color: #707070;
+}
+.tl_co {
+	width: 210rpx;
+	height: 29rpx;
+	float: left;
+	margin-left: 15rpx;
+	font-size: 22rpx;
+	line-height: 29rpx;
+	color: #707070;
+}
+.tl_yuan {
+	font-size: 18rpx;
+	line-height: 29rpx;
+	float: left;
+	color: #d91615;
+}
+.tl_pp {
+	font-size: 29rpx;
+	line-height: 29rpx;
+	float: left;
+	color: #d91615;
+	font-weight: bold;
+}
+.submit_btn {
+	width: 100%;
+	height: 90rpx;
+	text-align: center;
+	font-size: 30rpx;
+	line-height: 90rpx;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1001;
+}
+.btnstate0 {
+	background-color: #2865b8;
+	color: #fff;
+}
+.btnstate1 {
+	background-color: #e5e5e5;
+	color: #757575;
+	font-weight: bold;
+}
+.btnstate2 {
+	background-color: #e5e5e5;
+	color: #757575;
+	font-weight: bold;
+}
+.btnstate1 text {
+	padding-left: 60rpx;
+	background-image: url(http://wechat.jxlll.wang/images/pmic.png);
+	background-repeat: no-repeat;
+	background-size: 46rpx 47rpx;
+	background-position: 0 center;
+}
+.btnstate2 text {
+	padding-left: 60rpx;
+	background-image: url(http://wechat.jxlll.wang/images/pmic.png);
+	background-repeat: no-repeat;
+	background-size: 46rpx 47rpx;
+	background-position: 0 center;
+}
+.btnstate3 {
+	background-color: #ff473e;
+	color: #fff;
+	z-index: 1002;
+}
+.cover_bg {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 1003;
+}
+.close_area {
+	width: 100%;
+	height: calc(100% - 244rpx - 90rpx);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.cont {
+	width: 100%;
+	height: 242rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-top: 99rpx;
+	position: absolute;
+	bottom: 90rpx;
+	background-color: #fff;
+}
+.con_title {
+	width: 119rpx;
+	height: 70rpx;
+	float: left;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	text-align: center;
+	color: #757575;
+}
+.subtract {
+	width: 70rpx;
+	height: 70rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1rpx solid #bfbfbf;
+	font-size: 35rpx;
+	line-height: 70rpx;
+	text-align: center;
+	color: #999;
+	float: left;
+	background-image: url(http://wechat.jxlll.wang/images/subtract.png);
+	background-repeat: no-repeat;
+	background-size: 70rpx 70rpx;
+	background-position: center;
+}
+.con_price {
+	width: 344rpx;
+	height: 70rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border-top: 1rpx solid #bfbfbf;
+	border-bottom: 1rpx solid #bfbfbf;
+	float: left;
+	padding: 0 20rpx;
+	font-size: 36rpx;
+	line-height: 70rpx;
+	color: #999;
+}
+.add {
+	width: 70rpx;
+	height: 70rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1rpx solid #bfbfbf;
+	font-size: 35rpx;
+	line-height: 70rpx;
+	text-align: center;
+	color: #999;
+	float: left;
+	background-image: url(http://wechat.jxlll.wang/images/add.png);
+	background-repeat: no-repeat;
+	background-size: 70rpx 70rpx;
+	background-position: center;
+}
+.con_yuan {
+	width: 149rpx;
+	height: 70rpx;
+	float: left;
+	font-size: 24rpx;
+	line-height: 70rpx;
+	text-align: left;
+	color: #757575;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 20rpx;
+}
+.chuajia {
+	z-index: 10000;
+}

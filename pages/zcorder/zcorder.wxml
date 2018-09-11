@@ -1,0 +1,78 @@
+<import src="../components/tabBar.wxml"/>
+<template is="tab_bar" data="{{tabBar:bindData.tabBar}}"/>
+<view class="order_tab">
+	<view class="order_tab_item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
+		参拍公拍标
+		<view class="on_light"></view>
+	</view>
+	<view class="order_tab_item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
+		已拍下
+		<view class="on_light"></view>
+	</view>
+</view>
+
+<swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+	<swiper-item>
+		<scroll-view scroll-y="true" style="height: 100%;">
+			<block wx:for="{{orderList}}">
+				<view class="list_item">
+					<navigator class="list_item_link" url="" open-type="navigate" hover-class="none" id="{{item.id}}">
+						<image class="order_img" src="{{item.shop.good_img}}" mode="scaleToFill"></image>
+						<view class="title">{{item.shop.good_title}}</view>
+						<view class="prics_and_num">
+							<view class="price">{{item.city}}</view>
+							<view class="num">{{item.create_time}}</view>
+						</view>
+						<view class="creat_time"></view>
+					</navigator>
+					<view class="operation_bar">
+						<view class="textcont">保证金：￥{{item.shop.bail}}</view>
+						<view class="textcont">出价：￥{{item.price}}</view>
+						<view class="state state1" wx:if="{{item.status == 0}}">出局</view>
+						<view class="state state0" wx:if="{{item.status == 1}}">领先</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+	</swiper-item>
+	<swiper-item>
+		<scroll-view scroll-y="true" style="height: 100%;">
+			<block wx:for="{{payorderList}}">
+				<view class="list_item">
+					<navigator class="list_item_link" url="" open-type="navigate" hover-class="none" id="{{item.id}}">
+						<image class="order_img" src="{{item.shop.good_img}}" mode="scaleToFill"></image>
+						<view class="title">{{item.shop.good_title}}</view>
+						<view class="prics_and_num">
+							<view class="price">{{item.city}}</view>
+							<view class="num">{{item.create_time}}</view>
+						</view>
+						<view class="creat_time"></view>
+					</navigator>
+					<view class="operation_bar">
+						<view class="textcont">保证金：￥{{item.shop.bail}}</view>
+						<view class="textcont">出价：￥{{item.price}}</view>
+						<view class="state state0" wx:if="{{item.status == 0}}">准备交易</view>
+						<view class="state state0" wx:if="{{item.status == 1}}">交易中</view>
+						<view class="state state0" wx:if="{{item.status == 2}}">交易完成</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+	</swiper-item>
+</swiper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class="footerbh"></view> -->

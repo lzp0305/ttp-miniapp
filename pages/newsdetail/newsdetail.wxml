@@ -1,0 +1,18 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<image class="top_img" src="{{src}}" mode="scaleToFill"></image>
+<view class="card">
+	<view class="title">{{title}}</view>
+	<view class="date">{{date}}</view>
+	<view class="container">
+		<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+	</view>
+</view>
+<view class="share">
+	<view class="s_title">分享：</view>
+	<view class="s_content">
+		<!-- <button open-type="share" hover-class="none" class="sharebtn moments" style="background-image: url(http://wechat.jxlll.wang/images/moments.png)">
+		</button> -->
+		<button open-type="share" hover-class="none" class="sharebtn wechat" style="background-image: url(http://wechat.jxlll.wang/images/wechat.png)" id="{{id}}">
+		</button>
+	</view>
+</view>

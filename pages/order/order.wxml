@@ -1,0 +1,173 @@
+<import src="../components/tabBar.wxml"/>
+<template is="tab_bar" data="{{tabBar:bindData.tabBar}}"/>
+<view class="order_tab">
+	<view class="order_tab_item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
+		全部订单
+		<view class="on_light"></view>
+	</view>
+	<view class="order_tab_item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
+		待付款
+		<view class="on_light"></view>
+	</view>
+	<view class="order_tab_item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">
+		已付款
+		<view class="on_light"></view>
+	</view>
+	<view class="order_tab_item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">
+		已完成
+		<view class="on_light"></view>
+	</view>
+	<view class="order_tab_item {{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">
+		退款
+		<view class="on_light"></view>
+	</view>
+</view>
+
+<swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+	<swiper-item>
+		<scroll-view scroll-y="true" style="height: 100%;">
+			<block wx:for="{{orderList}}">
+				<view class="list_item">
+					<navigator class="list_item_link" url="" open-type="navigate" hover-class="none" id="{{item.shop_id}}" catchtap="toFwdetail">
+						<image class="order_img" src="{{item.shop.good_img}}" mode="scaleToFill"></image>
+						<view class="title">{{item.shop.good_title}}</view>
+						<view class="prics_and_num">
+							<view class="price">￥{{item.price}}</view>
+							<view class="num">x{{item.num}}</view>
+						</view>
+						<view class="creat_time">{{item.creat_time}}</view>
+					</navigator>
+					<view class="operation_bar">
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 0}}" data-orderid="{{item.id}}" catchtap="cancel">取消订单</view>
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 3}}">已取消</view>
+						<view class="oba oba_askrefund" wx:if="{{item.status == 1}}" bindtap="askrefund" id="{{item.id}}">退款申请</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 4}}">退款中</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 5}}">已退款</view>
+						<view class="oba oba_goforpay" wx:if="{{item.status == 0 }}" catchtap="goforpay" data-orderid="{{item.id}}">去付款</view>
+						<view class="oba oba_delete" wx:if="{{item.status == 2 }}">删除订单</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+	</swiper-item>
+	<swiper-item>
+		<scroll-view scroll-y="true" style="height: 100%;">
+			<block wx:for="{{orderList}}" wx:if="{{item.status == 0}}">
+				<view class="list_item">
+					<navigator class="list_item_link" url="" open-type="navigate" hover-class="none" id="{{item.shop_id}}" catchtap="toFwdetail">
+						<image class="order_img" src="{{item.shop.good_img}}" mode="scaleToFill"></image>
+						<view class="title">{{item.shop.good_title}}</view>
+						<view class="prics_and_num">
+							<view class="price">￥{{item.price}}</view>
+							<view class="num">x{{item.num}}</view>
+						</view>
+						<view class="creat_time">{{item.creat_time}}</view>
+					</navigator>
+					<view class="operation_bar">
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 0}}">取消订单</view>
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 3}}">已取消</view>
+						<view class="oba oba_askrefund" wx:if="{{item.status == 1}}" bindtap="askrefund" id="{{item.id}}">退款申请</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 4}}">退款中</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 5}}">已退款</view>
+						<view class="oba oba_goforpay" wx:if="{{item.status == 0 }}" catchtap="goforpay" data-orderid="{{item.id}}">去付款</view>
+						<view class="oba oba_delete" wx:if="{{item.status == 2 }}">删除订单</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+	</swiper-item>
+	<swiper-item>
+		<scroll-view scroll-y="true" style="height: 100%;">
+			<block wx:for="{{orderList}}" wx:if="{{item.status == 1}}">
+				<view class="list_item">
+					<navigator class="list_item_link" url="" open-type="navigate" hover-class="none" id="{{item.shop_id}}" catchtap="toFwdetail">
+						<image class="order_img" src="{{item.shop.good_img}}" mode="scaleToFill"></image>
+						<view class="title">{{item.shop.good_title}}</view>
+						<view class="prics_and_num">
+							<view class="price">￥{{item.price}}</view>
+							<view class="num">x{{item.num}}</view>
+						</view>
+						<view class="creat_time">{{item.creat_time}}</view>
+					</navigator>
+					<view class="operation_bar">
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 0}}">取消订单</view>
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 3}}">已取消</view>
+						<view class="oba oba_askrefund" wx:if="{{item.status == 1}}" bindtap="askrefund" id="{{item.id}}">退款申请</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 4}}">退款中</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 5}}">已退款</view>
+						<view class="oba oba_goforpay" wx:if="{{item.status == 0 }}" catchtap="goforpay" data-orderid="{{item.id}}">去付款</view>
+						<view class="oba oba_delete" wx:if="{{item.status == 2 }}">删除订单</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+	</swiper-item>
+	<swiper-item>
+		<scroll-view scroll-y="true" style="height: 100%;">
+			<block wx:for="{{orderList}}" wx:if="{{item.status == 2}}">
+				<view class="list_item">
+					<navigator class="list_item_link" url="" open-type="navigate" hover-class="none" id="{{item.shop_id}}" catchtap="toFwdetail">
+						<image class="order_img" src="{{item.shop.good_img}}" mode="scaleToFill"></image>
+						<view class="title">{{item.shop.good_title}}</view>
+						<view class="prics_and_num">
+							<view class="price">￥{{item.price}}</view>
+							<view class="num">x{{item.num}}</view>
+						</view>
+						<view class="creat_time">{{item.creat_time}}</view>
+					</navigator>
+					<view class="operation_bar">
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 0}}">取消订单</view>
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 3}}">已取消</view>
+						<view class="oba oba_askrefund" wx:if="{{item.status == 1}}" bindtap="askrefund" id="{{item.id}}">退款申请</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 4}}">退款中</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 5}}">已退款</view>
+						<view class="oba oba_goforpay" wx:if="{{item.status == 0 }}" catchtap="goforpay" data-orderid="{{item.id}}">去付款</view>
+						<view class="oba oba_delete" wx:if="{{item.status == 2 }}">删除订单</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+	</swiper-item>
+	<swiper-item>
+		<scroll-view scroll-y="true" style="height: 100%;">
+			<block wx:for="{{orderList}}" wx:if="{{item.status == 4 ||item.status == 5}}">
+				<view class="list_item">
+					<navigator class="list_item_link" url="" open-type="navigate" hover-class="none" id="{{item.shop_id}}" catchtap="toFwdetail">
+						<image class="order_img" src="{{item.shop.good_img}}" mode="scaleToFill"></image>
+						<view class="title">{{item.shop.good_title}}</view>
+						<view class="prics_and_num">
+							<view class="price">￥{{item.price}}</view>
+							<view class="num">x{{item.num}}</view>
+						</view>
+						<view class="creat_time">{{item.creat_time}}</view>
+					</navigator>
+					<view class="operation_bar">
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 0}}">取消订单</view>
+						<view class="oba oba_cancelorder" wx:if="{{item.status == 3}}">已取消</view>
+						<view class="oba oba_askrefund" wx:if="{{item.status == 1}}" bindtap="askrefund" id="{{item.id}}">退款申请</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 4}}">退款中</view>
+						<view class="oba oba_refunding" wx:if="{{item.status == 5}}">已退款</view>
+						<view class="oba oba_goforpay" wx:if="{{item.status == 0 }}" catchtap="goforpay" data-orderid="{{item.id}}">去付款</view>
+						<view class="oba oba_delete" wx:if="{{item.status == 2 }}">删除订单</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+	</swiper-item>
+</swiper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class="footerbh"></view> -->
